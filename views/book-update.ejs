@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/header-style.css">
+    <link rel="stylesheet" href="/book-update.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <%-include('./inc/header')%>
+        <% const book=bookDetails %>
+            <form action="/" method="post" class="form-update">
+                <div class="img-book">
+                    <img src="<%= book.thumbnailUrl %>" alt="">
+                </div>
+                <div class="book-details">
+                    <input type="number" name="ISBN" value="<%= book.isbn %>" onKeyDown="return false">
+                    <div class="book-name">
+                        <input type="text" name="name" value="<%= book.title %>">
+                    </div>
+                    <div class="book-authors">
+                        <span>Authors :</span>
+                        <input type="text" name="authors" value="<%= book.authors %>">
+                    </div>
+                    <div class="book-page">
+                        <span>Page :</span>
+                        <input type="number" name="page" value="<%= book.pageCount %>">
+                    </div>
+                    <div class="book-category">
+                        <span>Category :</span>
+                        <input type="text" name="category" value="<%= book.categories %>">
+                    </div>
+                    <div class="book-date">
+                        <span>Publish Date :</span>
+                        <input type="date" name="date" value="<%= book.publishedDate.$date %>">
+                    </div>
+                    <div class="book-description">
+                        <span>Description :</span>
+                        <textarea name="description"><%= book.longDescription%></textarea>
+                    </div>
+                    <button class="btn-update" name="update">Update</button>
+                </div>
+            </form>
+</body>
+
+</html>

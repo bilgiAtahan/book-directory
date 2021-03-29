@@ -1,0 +1,30 @@
+*{
+    background-color: #ddd;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.img-book img{
+    font-size: 350px;
+    width: 1,2em;
+    height: 1em;
+}
+.book-details{
+    width: 640px;
+    font-size: 20px;
+    margin-left: 5px;
+    padding-left: 2px;
+}
+.book-name{
+    font-size: 25px;
+    font-weight: bold;
+}
+.book-authors, .book-page, .book-category, .book-date, .book-description{
+    margin-top: 10px;
+}
+span:nth-child(1){
+    font-weight: bold;
+    font-size: 22px;
+}

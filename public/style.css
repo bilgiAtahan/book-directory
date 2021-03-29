@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+article{
+    display:flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
+.container{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.container .img-book img{
+    margin-top: 10px;
+    font-size: 100px;
+    width: 8rem;
+    height: 2em;
+    padding: 10px;
+}
+.container .book-name{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+.container .book-authors{
+    padding: 5px;
+    font-size: 17px;
+    text-align: center;
+    color: #00000099;
+}
+.container a{
+    margin-top: auto ;
+    text-decoration: none; 
+    color: #000;
+}
+.btn-details{
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+}

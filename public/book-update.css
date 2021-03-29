@@ -1,0 +1,61 @@
+body{
+    background-color: #dddd;
+}
+.form-update{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.img-book img{
+    font-size: 350px;
+    width: 1,2em;
+    height: 1em;
+}
+.book-details{
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    margin-left: 5px;
+    padding-left: 2px;
+}
+.book-details input{
+    font-size: 20px;
+    width: 250px;
+    margin: 5px;
+    padding: 5px;
+}
+input[name="ISBN"],input[name="ISBN"]:focus,input[name="ISBN"]:active{
+    background-color: inherit;
+    border: none;
+    outline:none;
+    cursor: default;
+}
+.book-name input{
+    margin: 0;
+    width: 500px;
+}
+.book-authors input{
+    width: 500px;
+}
+.book-description{
+    display: flex;
+    flex-direction: column;
+}
+.book-description textarea{
+    padding:5px;
+    width: 723px;
+    height: 326px;
+    resize: vertical;
+}
+.btn-update{
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

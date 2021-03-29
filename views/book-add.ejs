@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/header-style.css">
+    <link rel="stylesheet" href="book-add.css">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('./inc/header')%>
+    <form action="/" method="post">
+        <label for="">İSBN</label>
+        <input type="number" name="isbn" maxlength="10" required>
+        <label for="">Book Name</label>
+        <input type="text" name="title"  required>
+        <label for="">Book Authors</label>
+        <input type="text" name="authors"  required>
+        <label for="">Book Page</label>
+        <input type="number" name="pageCount" required>
+        <label for="">Book Category</label>
+        <input type="text" name="categories" required>
+        <label for="">Publish Date</label>
+        <input type="date" name="publishedDate" required>
+        <label for="">Description</label>
+        <textarea name="longDescription"  cols="30" rows="10" required></textarea>
+        <button name="add" class="btn-add">Add</button>
+    </form>
+</body>
+</html>
