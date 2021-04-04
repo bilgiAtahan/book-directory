@@ -13,7 +13,7 @@
 <body>
     <%-include('./inc/header')%>
         <% const book=bookDetails %>
-            <form action="/" method="post" class="form-update">
+            <form action="/update/:id" method="post" class="form-update">
                 <div class="img-book">
                     <img src="<%= book.thumbnailUrl %>" alt="">
                 </div>
@@ -42,7 +42,7 @@
                         <span>Description :</span>
                         <textarea name="description"><%= book.longDescription%></textarea>
                     </div>
-                    <button class="btn-update" name="update">Update</button>
+                    <button class="btn-update">Update</button>
                 </div>
             </form>
 </body>

@@ -10,7 +10,7 @@
 </head>
 <body>
     <%-include('./inc/header')%>
-    <form action="/" method="post">
+    <form action="/add" method="post">
         <label for="">İSBN</label>
         <input type="number" name="isbn" maxlength="10" required>
         <label for="">Book Name</label>
@@ -25,7 +25,7 @@
         <input type="date" name="publishedDate" required>
         <label for="">Description</label>
         <textarea name="longDescription"  cols="30" rows="10" required></textarea>
-        <button name="add" class="btn-add">Add</button>
+        <button class="btn-add">Add</button>
     </form>
 </body>
 </html>
