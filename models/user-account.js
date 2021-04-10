@@ -5,29 +5,23 @@ class User {
     #name
     #username
     #email
-    constructor(name, username, email, password) {
+    #books = [books]
+    constructor(name, username, email, password, book) {
         this.#name = name
         this.#username = username
         this.#email = email
         this.#password = password
+        this.#books.push = book
     }
-    get name() {
-        return this.#name
-    }
-    get email() {
-        return this.#email
-    }
-    get username() {
-        return this.#username
-    }
-    get password() {
-        return this.#password
-    }
-
     addBook(book) {
         const bookOfuser = new Book(book)
         books.push(bookOfuser)
     }
-
+    getBooks(id) {
+        if (id)
+            return books
+        else
+            return 202
+    }
 }
 module.exports = User

@@ -11,28 +11,34 @@ app.engine('html', require('ejs').renderFile);
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }))
 
-const books = require('./books');
-let booksDirectory = books;
 
 app.get('/', (req, res) => {
-   res.redirect('/login')
+    res.redirect('/login')
 });
 
 app.use(bookAdd)
 app.use(bookdelete)
 app.use(bookupdate)
 
-app.get('/login', (req, res) => {
+app.get('/login',(req, res) => {
     res.render('login')
 });
-app.post('/login',authCheck,(req,res)=>{
-    res.send('Succesfull')
+app.post('/login', authCheck, (req, res) => {
+    res.redirect('/' + req.body.id)
 })
-app.get('/register',(req,res)=>{
+app.get('/:id',userCheck, (req, res) => {
+    const user = users.getUser(req.params.id)
+    const bookOfUser = users.getBooks(req.params.id)
+    res.render('index', {
+        user: user,
+        books : bookOfUser
+    })
+})
+app.get('/register', (req, res) => {
     res.render('register')
 })
 
-app.post('/register',(req,res)=>{
+app.post('/register', (req, res) => {
     users.openAccount(req.body)
     res.redirect('/login')
 })
@@ -44,12 +50,26 @@ app.post('/register',(req,res)=>{
 //         res.render("book-details", { bookDetails: book_details })
 //     }
 // })
-function authCheck(req,res,next){
+function authCheck(req, res, next) {
     const username = req.body.username
-    if(users.checkUser(username))
-        if(users.checkUser(username) === req.body.password)
+    const user = users.checkUser(username)
+    if (user)
+        if (user.password === req.body.password) {
+            req.body = user
             next()
+            return
+        }
         else
-            res.send('404')     
+            res.send('404')
 }
+function userCheck(req,res,next){
+    const id = req.params.id
+    if(users.getUser(id)){
+        res.redirect('/login')
+    }
+    else
+        res.send('couldnt find')
+}
+
 app.listen(3000)
+
