@@ -4,7 +4,7 @@ const books = require('../books');
 let booksDirectory = books;
 
 router.get('/user/:id/delete', (req, res) => {
-    res.render('book-delete')
+    res.render('book-delete', { id: req.params.id })
 })
 
 router.post('/delete', (req, res) => {

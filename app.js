@@ -20,9 +20,6 @@ app.get('/', (req, res) => {
 
 app.use(login)
 app.use(register)
-app.use(bookAdd)
-app.use(bookdelete)
-app.use(bookupdate)
+
 
 app.listen(3000)
-

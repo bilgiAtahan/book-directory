@@ -1,25 +1,21 @@
 const express = require('express')
 const router = express.Router();
+const user = require('./user')
 const Users = require('../models/users')
 const users = new Users();
 
-router.get('/login',(req, res) => {
+router.get('/login', (req, res) => {
     res.render('login')
     return
 });
+
+router.use(user)
+
 
 router.post('/login', authCheck, (req, res) => {
     res.redirect('/user/' + req.body.id)
 })
 
-router.get('/user/:id', (req, res) => {
-    const user = users.getUser(req.params.id)
-    const bookOfUser = users.getBooks(req.params.id)
-    res.render('index', {
-        user: user,
-        books : bookOfUser
-    })
-})
 
 function authCheck(req, res, next) {
     const username = req.body.username
@@ -29,9 +25,8 @@ function authCheck(req, res, next) {
             req.body = user
             next()
             return
-        }
-        else
+        } else
             res.send('404')
-   
+
 }
 module.exports = router;

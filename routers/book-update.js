@@ -4,7 +4,8 @@ const books = require('../books');
 let booksDirectory = books;
 
 router.get('/user/:id/update', (req, res) => {
-    res.render('book-update-search')
+    res.render('book-update-search', { id: req.params.id })
+    res.send()
 })
 
 router.post('/update', (req, res) => {
@@ -12,11 +13,12 @@ router.post('/update', (req, res) => {
     res.redirect('/update/' + isbn)
 })
 
-router.get('/update/:id', (req, res) => {
+router.get('/user/:id/update/:id', (req, res) => {
     const { id } = req.params
     const book_details = booksDirectory.find(b => b.isbn === id)
     res.render('book-update', {
-        bookDetails: book_details
+        bookDetails: book_details,
+        id: req.params.id
     })
 })
 
