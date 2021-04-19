@@ -1,6 +1,7 @@
 const Book = require('./book')
 const books = require('../books')
 class User {
+    #id
     #password
     #name
     #username
@@ -12,6 +13,9 @@ class User {
         this.#email = email
         this.#password = password
         this.#books.push = book
+    }
+    property() {
+        return {id: '342342342342' , username: this.#username, password: this.#password }
     }
     addBook(book) {
         const bookOfuser = new Book(book)

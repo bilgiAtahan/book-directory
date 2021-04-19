@@ -3,10 +3,12 @@ class Users extends User{
     users = [{id:'569897854235',username:'bilgi',password:'1234'}]
     openAccount(user) {
         const newuser = new User(user.name, user.username, user.email, user.password)
-        this.users.push(newuser)
+        this.users.push(newuser.property())
+        console.log(this.users)
     }
     checkUser(username){
         const index =this.users.find(element => element.username === username)
+        console.log(this.users)
         if(index)
             return index
         else
@@ -19,6 +21,7 @@ class Users extends User{
         else
             return false
     }
+    
     
 
 }
