@@ -9,7 +9,6 @@ router.get('/register', (req, res) => {
 
 router.post('/register', (req, res) => {
     users.openAccount(req.body)
-    // console.log(users.users)
     res.redirect('/login')
 })
 

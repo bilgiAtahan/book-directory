@@ -3,7 +3,7 @@ const router = express.Router();
 const books = require('../books');
 let booksDirectory = books;
 
-router.get('/delete', (req, res) => {
+router.get('/user/:id/delete', (req, res) => {
     res.render('book-delete')
 })
 

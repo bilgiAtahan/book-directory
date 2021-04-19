@@ -1,20 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-header{
+
+header {
     border-bottom: 2px solid black;
     height: 50px;
     display: flex;
 }
-header a{
+
+header a {
     margin: auto;
     font-size: 18px;
     padding: 5px;
     text-decoration: none;
     color: black;
 }
-header a:hover{
+
+header a:hover {
     color: red;
 }

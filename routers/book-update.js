@@ -3,13 +3,13 @@ const router = express.Router();
 const books = require('../books');
 let booksDirectory = books;
 
-router.get('/update', (req, res) => {
+router.get('/user/:id/update', (req, res) => {
     res.render('book-update-search')
 })
 
 router.post('/update', (req, res) => {
     const isbn = req.body.isbn
-    res.redirect('/update/'+isbn)
+    res.redirect('/update/' + isbn)
 })
 
 router.get('/update/:id', (req, res) => {
@@ -20,7 +20,7 @@ router.get('/update/:id', (req, res) => {
     })
 })
 
-router.post('/update/:id',(req,res)=>{
+router.post('/update/:id', (req, res) => {
     const par = req.body
     booksDirectory.forEach(element => {
         if (element.isbn === par.ISBN) {
