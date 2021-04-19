@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <%-include('./inc/header')%>
+    <%-include('../inc/header')%>
         <% const book=bookDetails %>
-            <form action="/update/:id" method="post" class="form-update">
+            <form action="/user/:id/update/:id" method="post" class="form-update">
                 <div class="img-book">
                     <img src="<%= book.thumbnailUrl %>" alt="">
                 </div>

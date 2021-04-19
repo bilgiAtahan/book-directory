@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <%-include('./inc/header')%>
-        <form action="/update" method="POST">
+    <%-include('../inc/header')%>
+        <form action="/user/:id/delete" method="post">
             <label for="isbn">İSBN</label>
             <input type="number" name="isbn" maxlength="10" required>
-            <button>Update</button>
+            <button>Delete</button>
         </form>
 </body>
 

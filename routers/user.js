@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router();
-const bookAdd = require('./book-add')
-const bookdelete = require('./book-delete')
-const bookupdate = require('./book-update')
+const bookAdd = require('./book/book-add')
+const bookdelete = require('./book/book-delete')
+const bookupdate = require('./book/book-update')
 const Users = require('../models/users')
 const users = new Users();
 

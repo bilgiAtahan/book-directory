@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router();
-const books = require('../books');
+const books = require('../../books');
 let booksDirectory = books;
 
 router.get('/user/:id/update', (req, res) => {
@@ -8,7 +8,7 @@ router.get('/user/:id/update', (req, res) => {
     res.send()
 })
 
-router.post('/update', (req, res) => {
+router.post('/user/:id/update', (req, res) => {
     const isbn = req.body.isbn
     res.redirect('/update/' + isbn)
 })
@@ -22,7 +22,7 @@ router.get('/user/:id/update/:id', (req, res) => {
     })
 })
 
-router.post('/update/:id', (req, res) => {
+router.post('/user/:id/update/:id', (req, res) => {
     const par = req.body
     booksDirectory.forEach(element => {
         if (element.isbn === par.ISBN) {

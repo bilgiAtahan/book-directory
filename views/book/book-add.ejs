@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <%-include('./inc/header')%>
-        <form action="/add" method="post">
+    <%-include('../inc/header')%>
+        <form action="/user/:id/add" method="post">
             <label for="">İSBN</label>
             <input type="number" name="isbn" maxlength="10" required>
             <label for="">Book Name</label>
