@@ -6,11 +6,9 @@ const users = new Users();
 
 router.get('/login', (req, res) => {
     res.render('login')
-    return
 });
 
 router.use(user)
-
 
 router.post('/login', authCheck, (req, res) => {
     res.redirect('/user/' + req.body.id)
@@ -20,13 +18,15 @@ router.post('/login', authCheck, (req, res) => {
 function authCheck(req, res, next) {
     const username = req.body.username
     const user = users.checkUser(username)
-    if (user)
+    if (user) {
         if (user.password === req.body.password) {
             req.body = user
             next()
             return
         } else
             res.send('404')
+    } else
+        res.send('Kullancı bulunamadı')
 
 }
 module.exports = router;
