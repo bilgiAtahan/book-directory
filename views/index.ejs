@@ -12,22 +12,22 @@
 
 <body>
     <%- include('./inc/header'); %>
-        <article>
+        <div class="books">
             <% books.forEach(element=> { %>
-                <div class="container">
+                <article>
                     <div class="img-book">
                         <img src=<%=element.thumbnailUrl%> alt="">
                     </div>
                     <span class="book-name">
-                    <%= element.title %>
-                </span>
+                        <%= element.title %>
+                    </span>
                     <span class="book-authors">
-                    <%= element.authors %>
-                </span>
-                    <a href="/<%=element.isbn%>"><button class="btn-details">Details</button></a></button>
-                </div>
+                        <%= element.authors %>
+                    </span>
+                    <a href="/<%=element.isbn%>"><button class="btn-details">Details</button></a>
+                </article>
                 <% }); %>
-        </article>
+        </div>
 
 </body>
 
