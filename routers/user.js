@@ -3,19 +3,13 @@ const router = express.Router();
 const bookAdd = require('./book/book-add')
 const bookdelete = require('./book/book-delete')
 const bookupdate = require('./book/book-update')
-const Users = require('../models/users')
-const users = new Users();
+// const Users = require('../models/users')
+// const users = new Users();
 
-router.get('/user/:id', (req, res) => {
-    const user = users.getUser(req.params.id)
-    const bookOfUser = users.getBooks(req.params.id)
-    res.render('index', {
-        user: user,
-        books: bookOfUser,
-        id: req.params.id
-    })
+router.get('/:userId', (req, res) => {
+    res.send('0202')
+
 })
-
 router.use(bookAdd)
 router.use(bookdelete)
 router.use(bookupdate)
