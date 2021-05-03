@@ -1,12 +1,11 @@
 const Book = require('./book')
 const books = require('../books')
 class User {
-    #id
     #password
     #name
     #username
     #email
-    #books = [books]
+    #books = books
     constructor(name, username, email, password, book) {
         this.#name = name
         this.#username = username
@@ -15,17 +14,21 @@ class User {
         this.#books.push = book
     }
     property() {
-        return {id: '342342342342' , username: this.#username, password: this.#password }
+        return { id: '342342342342', username: this.#username, password: this.#password }
     }
     addBook(book) {
         const bookOfuser = new Book(book)
         books.push(bookOfuser)
     }
-    getBooks(id) {
+    getBooksOfUser(id) {
         if (id)
-            return books
+            return this.books;
         else
             return 202
+    }
+    getBook(id) {
+        const index = this.#books.findIndex(book => book.isbn === id)
+        return this.#books[index]
     }
 }
 module.exports = User
