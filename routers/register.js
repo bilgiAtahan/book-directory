@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router();
-const Users = require('../models/users')
+const Users = require('../models/users-controller')
 const users = new Users();
 
 router.get('/register', (req, res) => {
