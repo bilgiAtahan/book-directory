@@ -1,7 +1,8 @@
 const User = require('./user-account')
+const books = require('../books')
 
-const users = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' },
-{ id: 2, username: 'ugurlu', password: 'test1', firstName: 'Necmi', lastName: 'Erbakan' }];
+const users = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User', books: books },
+{ id: 2, username: 'ugurlu', password: 'test1', firstName: 'Necmi', lastName: 'Erbakan', books: books }];
 
 module.exports = {
     authenticate,
@@ -24,7 +25,7 @@ function checkUser(username) {
 }
 
 function getUser(id) {
-    const index = users.find(element => element.id === id)
+    const index = users.find(element => element.id.toString() === id)
     if (index)
         return index
     else

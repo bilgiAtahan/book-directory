@@ -4,8 +4,6 @@ const login = require('./routers/login')
 const register = require('./routers/register')
 const user = require('./routers/user')
 
-const Users = require('./models/users')
-// const users = new Users();
 
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
