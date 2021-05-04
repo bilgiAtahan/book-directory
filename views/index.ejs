@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <%- include('./inc/header'); %>
+    <%-include('../inc/header')%>
         <div class="books">
             <% books.forEach(element=> { %>
                 <article>
@@ -24,7 +24,7 @@
                     <span class="book-authors">
                         <%= element.authors %>
                     </span>
-                    <a href="/<%=element.isbn%>"><button class="btn-details">Details</button></a>
+                    <a href="/user/<%= Number(id) %> /<%=element.isbn%>"><button class="btn-details">Details</button></a>
                 </article>
                 <% }); %>
         </div>
