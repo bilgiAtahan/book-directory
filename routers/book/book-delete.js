@@ -15,7 +15,7 @@ router.post('/:id/delete', (req, res) => {
     const par = req.body
     const index = booksDirectory.findIndex(b => b.isbn === par.isbn)
     delete booksDirectory[index]
-    res.redirect("/")
+    res.redirect('/user/' + Number(req.params.id))
 })
 
 module.exports = router;

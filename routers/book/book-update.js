@@ -26,7 +26,7 @@ router.get('/:id/update/:isbn', (req, res) => {
     })
 })
 
-router.post('/:id/update/:id', (req, res) => {
+router.post('/:id/update/:isbn', (req, res) => {
     const par = req.body
     booksDirectory.forEach(element => {
         if (element.isbn === par.ISBN) {
@@ -38,7 +38,7 @@ router.post('/:id/update/:id', (req, res) => {
             element.longDescription = par.description
         }
     });
-    res.redirect('/')
+    res.redirect('/user/' + Number(req.params.id))
 })
 
 module.exports = router;

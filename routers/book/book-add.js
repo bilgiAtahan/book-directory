@@ -14,7 +14,7 @@ router.get('/:id/add', (req, res) => {
 router.post('/:id/add', (req, res) => {
     const par = req.body
     booksDirectory.push(par)
-    res.redirect('/')
+    res.redirect('/user/' + Number(req.params.id))
 })
 
 module.exports = router;
