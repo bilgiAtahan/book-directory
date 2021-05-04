@@ -12,7 +12,7 @@
 
 <body>
     <%-include('../inc/header')%>
-        <form action="/user/:id/update" method="POST">
+        <form action="/user/<%= id %> /update" method="POST">
             <label for="isbn">İSBN</label>
             <input type="number" name="isbn" maxlength="10" required>
             <button>Update</button>

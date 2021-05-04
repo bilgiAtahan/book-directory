@@ -9,17 +9,16 @@ router.get('/:id/update', (req, res) => {
         id: req.params.id,
         username: usercontroller.getUsername(req.params.id)
     })
-    res.send()
 })
 
 router.post('/:id/update', (req, res) => {
     const isbn = req.body.isbn
-    res.redirect('book/update/' + isbn)
+    const id = Number(req.params.id)
+    res.redirect('/user/' + id + '/update/' + isbn)
 })
 
-router.get('/:id/update/:id', (req, res) => {
-    const { id } = req.params
-    const book_details = booksDirectory.find(b => b.isbn === id)
+router.get('/:id/update/:isbn', (req, res) => {
+    const book_details = booksDirectory.find(b => b.isbn === req.params.isbn)
     res.render('book/book-update', {
         bookDetails: book_details,
         id: req.params.id,
