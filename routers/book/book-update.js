@@ -1,10 +1,14 @@
 const express = require('express')
 const router = express.Router();
+const usercontroller = require('../../models/users-controller')
 const books = require('../../books');
 let booksDirectory = books;
 
 router.get('/:id/update', (req, res) => {
-    res.render('book/book-update-search', { id: req.params.id })
+    res.render('book/book-update-search', {
+        id: req.params.id,
+        username: usercontroller.getUsername(req.params.id)
+    })
     res.send()
 })
 
@@ -18,7 +22,8 @@ router.get('/:id/update/:id', (req, res) => {
     const book_details = booksDirectory.find(b => b.isbn === id)
     res.render('book/book-update', {
         bookDetails: book_details,
-        id: req.params.id
+        id: req.params.id,
+        username: usercontroller.getUsername(req.params.id)
     })
 })
 

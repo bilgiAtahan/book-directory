@@ -8,7 +8,8 @@ module.exports = {
     authenticate,
     openAccount,
     checkUser,
-    getUser
+    getUser,
+    getUsername
 };
 
 function openAccount(user) {
@@ -31,7 +32,11 @@ function getUser(id) {
     else
         return false
 }
-
+function getUsername(id) {
+    const index = users.find(element => element.id.toString() === id)
+    if (index)
+        return index.username
+}
 async function authenticate({ username, password }) {
     const user = users.find(u => u.username === username && u.password === password);
     if (user) {
