@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
     <%-include('../inc/head.ejs') %>
+</head>
 <body>
     <%-include('../inc/header')%>
         <form action="/user/<%= id %> /add" method="post">
-            <label for="">İSBN</label>
-            <input type="number" name="isbn" maxlength="10" required>
-            <label for="">Book Name</label>
-            <input type="text" name="title" required>
-            <label for="">Book Authors</label>
-            <input type="text" name="authors" required>
-            <label for="">Book Page</label>
-            <input type="number" name="pageCount" required>
-            <label for="">Book Category</label>
-            <input type="text" name="categories" required>
-            <label for="">Publish Date</label>
-            <input type="date" name="publishedDate" required>
-            <label for="">Description</label>
-            <textarea name="longDescription" cols="30" rows="10" required></textarea>
-            <button class="btn-add">Add</button>
+            <label for="" class="form-label mt-3">İSBN</label>
+            <input type="number" name="isbn"  class="form-control mb-3 " required>
+            <label for="" class="form-label">Book Name</label>
+            <input type="text" name="title"  class="form-control mb-3" required>
+            <label for="" class="form-label">Book Authors</label>
+            <input type="text" name="authors"  class="form-control mb-3" required>
+            <label for="" class="form-label">Book Page</label>
+            <input type="number" name="pageCount"  class="form-control mb-3" required>
+            <label for="" class="form-label">Book Category</label>
+            <input type="text" name="categories"  class="form-control mb-3" required>
+            <label for="" class="form-label">Publish Date</label>
+            <input type="date" name="publishedDate"  class="form-control mb-3" required>
+            <label for="" class="form-label">Description</label>
+            <textarea name="longDescription" cols="30" rows="10" class="form-control mb-3" required></textarea>
+            <button class="btn-add btn btn-secondary">Add</button>
         </form>
 </body>
 

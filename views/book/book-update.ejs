@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
     <%-include('../inc/head.ejs') %>
+        <link rel="stylesheet" href="/book-update.css">
+</head>
+
 <body>
     <%-include('../inc/header')%>
         <% const book=bookDetails %>
-            <form action="/user/<%= id %> /update/:isbn" method="post" class="form-update">
-                <div class="img-book">
-                    <img src="<%= book.thumbnailUrl %>" alt="">
-                </div>
+        <div class="book-update">
+            <div class="img-book">
+                <img src="<%= book.thumbnailUrl %>" alt="">
+            </div>
+            <form action="/user/<%= id %> /update/:isbn" method="post">
                 <div class="book-details">
-                    <input type="number" name="ISBN" value="<%= book.isbn %>" onKeyDown="return false">
-                    <div class="book-name">
-                        <input type="text" name="name" value="<%= book.title %>">
+                    <input type="number" name="ISBN" class="form-control mb-3" value="<%= book.isbn %>"
+                        disabled>
+                    <div class="mb-3">
+                        <input type="text" name="name" class="form-control" value="<%= book.title %>">
                     </div>
-                    <div class="book-authors">
-                        <span>Authors :</span>
-                        <input type="text" name="authors" value="<%= book.authors %>">
+                    <div class="mb-3">
+                        <span>Authors</span>
+                        <input type="text" name="authors" class="form-control" value="<%= book.authors %>">
                     </div>
-                    <div class="book-page">
-                        <span>Page :</span>
-                        <input type="number" name="page" value="<%= book.pageCount %>">
+                    <div class="mb-3">
+                        <span>Page</span>
+                        <input type="number" name="page" class="form-control" value="<%= book.pageCount %>">
                     </div>
-                    <div class="book-category">
-                        <span>Category :</span>
-                        <input type="text" name="category" value="<%= book.categories %>">
+                    <div class="mb-3">
+                        <span>Category</span>
+                        <input type="text" name="category" class="form-control" value="<%= book.categories %>">
                     </div>
-                    <div class="book-date">
-                        <span>Publish Date :</span>
-                        <input type="date" name="date" value="<%= book.publishedDate.$date %>">
+                    <div class="mb-3">
+                        <span >Publish Date</span>
+                        <input type="date" name="date" class="form-control" value="<%= book.publishedDate.$date %>">
                     </div>
-                    <div class="book-description">
-                        <span>Description :</span>
-                        <textarea name="description"><%= book.longDescription%></textarea>
+                    <div class="mb-3">
+                        <span>Description</span>
+                        <textarea name="description" class="form-control"><%= book.longDescription%></textarea>
                     </div>
-                    <button class="btn-update">Update</button>
+                    <button class="btn-update btn btn-secondary">Update</button>
                 </div>
             </form>
+        </div>
 </body>
 
 </html>

@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+
     <%-include('../inc/head.ejs') %>
+</head>
 
 <body>
     <%-include('../inc/header')%>
-        <% const book = bookDetails%>
+        <% const book=bookDetails%>
             <div class="container">
                 <div class="img-book">
                     <img src="<%=book.thumbnailUrl%>" alt="">
                 </div>
                 <div class="book-details">
                     <span class="book-name">
-                <%= book.title %>
-            </span>
+                        <%= book.title %>
+                    </span>
                     <div class="book-authors">
                         <span>Authors :</span>
                         <span>
-                    <%= book.authors %>
-                </span>
+                            <%= book.authors %>
+                        </span>
                     </div>
                     <div class="book-page">
                         <span>Page :</span>
                         <span>
-                    <%= book.pageCount %>
-                </span>
+                            <%= book.pageCount %>
+                        </span>
                     </div>
                     <div class="book-category">
                         <span>Category :</span>
                         <span>
-                    <%= book.categories %>
-                </span>
+                            <%= book.categories %>
+                        </span>
                     </div>
                     <div class="book-date">
                         <span>Publish Date :</span>
                         <span>
-                    <%= book.publishedDate.$date %>
-                </span>
+                            <%= book.publishedDate.$date %>
+                        </span>
                     </div>
                     <div class="book-description">
                         <span>Description :</span>
                         <span>
-                    <%= book.longDescription%>
-                </span>
+                            <%= book.longDescription%>
+                        </span>
                     </div>
                 </div>
             </div>

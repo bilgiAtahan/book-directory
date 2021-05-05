@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('../inc/head.ejs') %>
+    <head>
+
+        <%-include('../inc/head.ejs') %>
+    </head>
 <body>
     <%-include('../inc/header')%>
         <form action="/user/<%= id %>/delete" method="post">
-            <label for="isbn">İSBN</label>
-            <input type="number" name="isbn" maxlength="10" required>
-            <button>Delete</button>
+            <label for="isbn" class="form-label mt-3">İSBN</label>
+            <input type="number" name="isbn" class="form-control" required>
+            <button class="btn btn-secondary mt-3">Delete</button>
         </form>
 </body>
 
