@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/header-style.css">
-    <title>Home</title>
-</head>
+<%-include('./inc/head.ejs') %>
 
-<body>
-    <%-include('./inc/header')%>
-        <div class="books">
-            <% books.forEach(element=> { %>
-                <article>
-                    <div class="img-book">
-                        <img src= <%=element.thumbnailUrl%> alt="">
-                    </div>
-                    <span class="book-name">
-                        <%= element.title %>
-                    </span>
-                    <span class="book-authors">
-                        <%= element.authors %>
-                    </span>
-                    <a href="/user/<%= Number(id) %> /<%=element.isbn%>"><button class="btn-details">Details</button></a>
-                </article>
-                <% }); %>
-        </div>
+    <body>
+        <%-include('./inc/header')%>
+            <div class="books">
+                <% books.forEach(element=> { %>
+                    <article class="card text-center">
+                        <img src=<%=element.thumbnailUrl%> alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= element.title %>
+                            </h5>
+                            <p class="card-text text-muted">
+                                <%= element.authors %>
+                            </p>
+                        </div>
+                        <a href="/user/<%= Number(id) %> /<%=element.isbn%>" ><button
+                        class="btn-details btn btn-secondary">Details</button></a>
+                    </article>
+                    <% }); %>
+            </div>
 
-</body>
+    </body>
 
 </html>
