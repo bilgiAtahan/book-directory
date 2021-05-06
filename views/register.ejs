@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%-include('./inc/head.ejs') %>
 </head>
 <body>
-    <form action="/register" method="POST">
-        <label for="">Username</label>
-        <input type="text" name="username">
-        <label for="">Name</label>
-        <input type="text" name="name">
-        <label for="">Email</label>
-        <input type="email" name="email">
-        <label for="">Password</label>
-        <input type="number" name="password" id="">
-        <button>Register</button>
+    <form action="/register" method="POST" class="mt-5">
+        <label for="" class="form-label">Username</label>
+        <input type="text" name="username" class="form-control">
+        <label for="" class="form-label">Name</label>
+        <input type="text" name="name" class="form-control">
+        <label for="" class="form-label">Email</label>
+        <input type="email" name="email" class="form-control">
+        <label for="" class="form-label">Password</label>
+        <input type="number" name="password" id="" class="form-control">
+        <div class="d-flex .align-items-center mt-3">
+            <button class="btn-login btn btn-secondary "><a href="/login">Login</a></button>
+            <button class="btn btn-primary ">Register</button>
+        </div>
     </form>
 </body>
 </html>

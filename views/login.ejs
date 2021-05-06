@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%-include('./inc/head.ejs') %>
 </head>
 <body>
-    <h1>Login</h1>
+    <h1 class="d-flex justify-content-center mt-5 text-uppercase">Login</h1>
     <form action="/login" method="post">
-        <label for="">Username</label>
-        <input type="text" name="username" id="">
-        <label for="">Password</label>
-        <input type="password" name="password" id="">
-        <button>Logın</button>
+        <label for="" class="form-label"s>Username</label>
+        <input type="text" name="username" id="" class="form-control">
+        <label for="" class="form-label mt-3">Password</label>
+        <input type="password" name="password" id="" class="form-control">
+        <div class="d-flex .align-items-center mt-3">
+            <button class="btn-register btn-secondary "><a href="/register">have an account</a></button>
+            <button class="btn btn-primary ">Logın</button>
+        </div>
     </form>
-    <a href="/register"><button>have an account</button></a>
 </body>
 </html>
