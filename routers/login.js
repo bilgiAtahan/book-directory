@@ -12,6 +12,6 @@ module.exports = router;
 
 function authenticate(req, res, next) {
     user.authenticate(req.body)
-        .then(user => user ? res.redirect("/user/" + user.id) : res.status(400).json({ message: 'Username or password is incorrect' }))
+        .then(user => user ? res.redirect("/user/" + user.id): res.status(400).json({ message: 'Username or password is incorrect' }))
         .catch(err => next(err));
 }

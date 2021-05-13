@@ -7,11 +7,11 @@ const bookdetails = require('./book/book-details')
 const usercontroller = require('../models/users-controller')
 
 router.get('/:userId', (req, res) => {
-    const a = usercontroller.getUser(req.params.userId)
+    const user = usercontroller.getUser(req.params.userId)
     res.render('index', {
-        id: a.id,
-        username: a.username,
-        books: a.books
+        id: user.id,
+        username: user.username,
+        books: user.books
     })
 })
 router.use(bookAdd)

@@ -14,7 +14,7 @@ class User {
         this.#books.push = book
     }
     property() {
-        return { id: '342342342342', username: this.#username, password: this.#password }
+        return { id: '342342342342', username: this.#username, password: this.#password, books: this.#books }
     }
     addBook(book) {
         const bookOfuser = new Book(book)
